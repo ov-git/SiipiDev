@@ -1,22 +1,26 @@
 import Slider from "../components/Slider";
 import Map from "../components/Map";
+import haukka from "../assets/haukka-transparent.png";
 
 const MainPage = () => {
   return (
     <>
-      <Slider />
+      <div className="hidden sm:block">
+        <Slider />
+      </div>
 
       <div className="w-full h-full grid md:grid-cols-2 text-white md:justify-center">
-        <h1 className="flex text-5xl md:col-span-2 p-10 justify-center font-bold border-b-2">
+        <h1 className="mt-12 sm:mt-0 flex text-4xl sm:text-5xl md:col-span-2 p-10 justify-center font-bold border-b-2">
           Baari Haukansiipi
         </h1>
 
-        <div className="h-full w-full flex flex-col items-center text-5xl gap-4 p-8 relative">
+        <div className="h-full w-full flex flex-col items-center text-5xl gap-4 justify-center relative">
           <h3 className="font-bold ">AUKIOLOAJAT</h3>
           <p>Su-To 9-24</p>
           <p>Pe 9-02</p>
           <p>La 9-02</p>
-          {/* <img src={haukka} className="h-[300px] absolute bottom-0" /> */}
+          {/* <img src={haukka} className="h-auto w-3/5 absolute bottom-0" />
+          <div className="h-[400px]"></div> */}
         </div>
 
         <Map />

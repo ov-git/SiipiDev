@@ -15,22 +15,22 @@ const NavBar = () => {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  });
 
   return (
     <div
-      className={`h-24 w-full fixed z-20 flex text-white items-center justify-center bg-gradient-to-b from-black to-${navbarBackground} opacity-80 transition-all ease-in-out`}
+      className={`h-24 w-full fixed z-20 flex text-white items-center justify-center bg-gradient-to-b from-black to-${navbarBackground} transition-all ease-in-out`}
     >
-      <ul className="flex h-full w-full items-center font-bold text-xl gap-8 max-w-[1600px]">
+      <ul className="flex h-full w-full items-center font-bold text-2xl gap-8 max-w-[1600px] px-4">
         <li>
           <NavLink to="/">Etusivu</NavLink>
         </li>
         <li>
           <NavLink to="/tapahtumat">Tapahtumat</NavLink>
         </li>
-        <li>
+        {/*TODO <li>
           <NavLink to="/viikko-tapahtumat">Yhteystiedot</NavLink>
-        </li>
+        </li> */}
         <li className="text-3xl">
           <a href="https://www.facebook.com/profile.php?id=100044458317177">
             <BsFacebook />
