@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Squealer";
-  src: url("/src/assets/fonts/Squealer.otf") format("truetype");
+  font-family: 'Squealer';
+  src: url('/src/assets/fonts/Squealer.otf') format('truetype');
 }

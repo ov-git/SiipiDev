@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import { slides } from "../lib/slides";
-import { motion, AnimatePresence } from "framer-motion";
-import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
+import { useEffect, useState } from 'react';
+import { slides } from '../lib/slides';
+import { motion, AnimatePresence } from 'framer-motion';
+import { BiChevronRight, BiChevronLeft } from 'react-icons/bi';
 
 const variants = {
   initial: (direction: number) => {
-    return direction >= 0 ? { x: "100vw" } : { x: "-100vw" };
+    return direction >= 0 ? { x: '100vw' } : { x: '-100vw' };
   },
   animate: {
     x: 0,
@@ -14,8 +14,8 @@ const variants = {
   },
   exit: (direction: number) => {
     return direction >= 0
-      ? { x: "-100vw", transition: { delay: 0, duration: 1 } }
-      : { x: "100vw", transition: { delay: 0, duration: 1 } };
+      ? { x: '-100vw', transition: { delay: 0, duration: 1 } }
+      : { x: '100vw', transition: { delay: 0, duration: 1 } };
   },
 };
 
@@ -84,11 +84,11 @@ const Slider = () => {
           />
         </AnimatePresence>
         <div className="z-10 gap-2 flex p-2">
-          {slides.map((el, i) => (
+          {slides.map((image, i) => (
             <button
-              key={el}
+              key={image}
               className={`h-4 w-4 rounded-full ${
-                current === i ? "bg-slate-700" : "bg-white"
+                current === i ? 'bg-slate-700' : 'bg-white'
               }`}
               onClick={() => selectImage(i)}
             ></button>
@@ -100,13 +100,13 @@ const Slider = () => {
         onClick={prevSlide}
         className="z-10 text-white absolute top-1/2 left-5 bg-black rounded-full bg-opacity-20 hover:bg-opacity-80 flex items-center justify-center"
       >
-        <BiChevronLeft className="text-6xl font-bold" />
+        <BiChevronLeft className="text-5xl font-bold" />
       </button>
       <button
         onClick={nextSlide}
         className="z-10 text-white absolute top-1/2 right-5 bg-black rounded-full bg-opacity-20 hover:bg-opacity-80 flex items-center justify-center"
       >
-        <BiChevronRight className="text-6xl font-bold" />
+        <BiChevronRight className="text-5xl font-bold" />
       </button>
     </div>
   );

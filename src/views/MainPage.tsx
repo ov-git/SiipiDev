@@ -1,6 +1,5 @@
-import Slider from "../components/Slider";
-import Map from "../components/Map";
-import haukka from "../assets/haukka-transparent.png";
+import Slider from '../components/Slider';
+import Map from '../components/Map';
 
 const MainPage = () => {
   return (
@@ -9,12 +8,12 @@ const MainPage = () => {
         <Slider />
       </div>
 
-      <div className="w-full h-full grid md:grid-cols-2 text-white md:justify-center">
-        <h1 className="mt-12 sm:mt-0 flex text-4xl sm:text-5xl md:col-span-2 p-10 justify-center font-bold border-b-2">
+      <div className="w-full h-full flex flex-col gap-4 md:grid grid-cols-2 text-white md:justify-center">
+        <h1 className="mt-16 sm:mt-0 flex text-4xl sm:text-5xl md:col-span-2 p-10 justify-center font-bold sm:border-b-2">
           Baari Haukansiipi
         </h1>
 
-        <div className="h-full w-full flex flex-col items-center text-5xl gap-4 justify-center relative">
+        <div className="h-full w-full flex flex-col items-center text-4xl sm:text-5xl gap-4 justify-center relative">
           <h3 className="font-bold ">AUKIOLOAJAT</h3>
           <p>Su-To 9-24</p>
           <p>Pe 9-02</p>

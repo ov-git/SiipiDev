@@ -1,37 +1,22 @@
-import { useEffect, useState } from "react";
-import { BsFacebook } from "react-icons/bs";
-import { NavLink } from "react-router-dom";
+import { BsFacebook } from 'react-icons/bs';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
-  const [navbarBackground, setNavbarBackground] = useState("transparent");
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setNavbarBackground("black");
-      } else {
-        setNavbarBackground("transparent");
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  });
-
   return (
     <div
-      className={`h-24 w-full fixed z-20 flex text-white items-center justify-center bg-gradient-to-b from-black to-${navbarBackground} transition-all ease-in-out`}
+      className={`h-24 w-full fixed z-20 flex text-white items-center justify-center bg-gradient-to-b from-black to-transparent transition-all ease-in-out`}
     >
-      <ul className="flex h-full w-full items-center font-bold text-2xl gap-8 max-w-[1600px] px-4">
-        <li>
+      <ul className="flex h-full w-full items-center font-bold text-2xl gap-6 sm:gap-8 max-w-[1600px] px-8">
+        <li className="hover:text-slate-300">
           <NavLink to="/">Etusivu</NavLink>
         </li>
-        <li>
+        <li className="hover:text-slate-300">
           <NavLink to="/tapahtumat">Tapahtumat</NavLink>
         </li>
         {/*TODO <li>
           <NavLink to="/viikko-tapahtumat">Yhteystiedot</NavLink>
         </li> */}
-        <li className="text-3xl">
+        <li className="text-3xl hover:text-slate-300">
           <a href="https://www.facebook.com/profile.php?id=100044458317177">
             <BsFacebook />
           </a>

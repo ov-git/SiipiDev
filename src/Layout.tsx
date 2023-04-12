@@ -1,6 +1,6 @@
-import { Outlet } from "react-router-dom";
-import haukka from "./assets/haukka-transparent.png";
-import NavBar from "./components/NavBar";
+import { Outlet } from 'react-router-dom';
+import haukka from './assets/haukka-transparent.png';
+import NavBar from './components/NavBar';
 
 const Layout = () => {
   return (

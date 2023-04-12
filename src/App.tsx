@@ -1,7 +1,7 @@
-import { Route, Routes } from "react-router-dom";
-import Layout from "./Layout";
-import MainPage from "./views/MainPage";
-import EventsPage from "./views/EventsPage";
+import { Route, Routes } from 'react-router-dom';
+import Layout from './Layout';
+import MainPage from './views/MainPage';
+import EventsPage from './views/EventsPage';
 
 function App() {
   return (
