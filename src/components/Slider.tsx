@@ -1,72 +1,11 @@
-import { useEffect, useState } from 'react';
 import { slides } from '../lib/slides';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BiChevronRight, BiChevronLeft } from 'react-icons/bi';
-
-const variants = {
-  initial: (direction: number) => {
-    return direction >= 0 ? { x: '100vw' } : { x: '-100vw' };
-  },
-  animate: {
-    x: 0,
-    opacity: 1,
-    transition: { delay: 0, duration: 1 },
-  },
-  exit: (direction: number) => {
-    return direction >= 0
-      ? { x: '-100vw', transition: { delay: 0, duration: 1 } }
-      : { x: '100vw', transition: { delay: 0, duration: 1 } };
-  },
-};
+import useSlider from '../hooks/useSlider';
 
 const Slider = () => {
-  const [current, setCurrent] = useState(0);
-  const [autoSlide, setAutoSlide] = useState(true);
-  const [direction, setDirection] = useState(0);
-
-  useEffect(() => {
-    if (!autoSlide) return;
-    const interval = setInterval(() => {
-      if (current < slides.length - 1) {
-        setCurrent(current + 1);
-        return;
-      }
-      setCurrent(0);
-    }, 5000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, [current]);
-
-  const nextSlide = () => {
-    setDirection(1);
-    setAutoSlide(false);
-    if (current < slides.length - 1) {
-      setCurrent(current + 1);
-      return;
-    }
-    setCurrent(0);
-  };
-
-  const prevSlide = () => {
-    setDirection(-1);
-    setAutoSlide(false);
-    if (current > 0) {
-      setCurrent(current - 1);
-      return;
-    }
-    setCurrent(slides.length - 1);
-  };
-
-  const selectImage = (i: number) => {
-    setAutoSlide(false);
-    if (i > current) {
-      setDirection(1);
-    } else {
-      setDirection(-1);
-    }
-    setCurrent(i);
-  };
+  const { current, direction, variants, selectImage, nextSlide, prevSlide } =
+    useSlider();
 
   return (
     <div className=" w-full h-[80vh] relative flex overflow-hidden">
@@ -83,6 +22,8 @@ const Slider = () => {
             className="absolute object-cover h-full w-full"
           />
         </AnimatePresence>
+
+        {/* Slider dots */}
         <div className="z-10 gap-2 flex p-2">
           {slides.map((image, i) => (
             <button
